@@ -1,0 +1,118 @@
+package com.pluralsight;
+import java.util.Scanner;
+
+public class Ledger {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Main loop
+        while (true) {
+            displayHomeScreen();
+            String option = scanner.nextLine().toUpperCase();
+
+            switch (option) {
+                case "D" -> addDeposit();
+                case "P" -> makePayment();
+                case "L" -> displayLedger();
+                case "R" -> displayReports();
+                case "X" -> {
+                    exit();
+                    return;
+                }
+                default -> System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+
+    private static void displayHomeScreen() {
+        System.out.println("Home Screen");
+        System.out.println("D) Add Deposit");
+        System.out.println("P) Make Payment (Debit)");
+        System.out.println("L) Ledger");
+        System.out.println("R) Reports");
+        System.out.println("X) Exit");
+        System.out.print("Choose an option: ");
+    }
+
+    private static void addDeposit() {
+        // Add deposit logic
+    }
+
+    private static void makePayment() {
+        // Make payment logic
+    }
+
+    private static void displayLedger() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ledger Screen");
+        System.out.println("A) All");
+        System.out.println("D) Deposits");
+        System.out.println("P) Payments");
+        System.out.println("R) Reports");
+        System.out.println("H) Home");
+        System.out.print("Choose an option: ");
+        String option = scanner.nextLine().toUpperCase();
+
+        switch (option) {
+            case "A" -> displayAllEntries();
+            case "D" -> displayDeposits();
+            case "P" -> displayPayments();
+            case "R" -> displayReports();
+            case "H" -> {
+            }
+            default -> System.out.println("Invalid option. Please try again.");
+        }
+    }
+
+    private static void displayAllEntries() {
+        // Display all ledger entries
+    }
+
+    private static void displayDeposits() {
+        // Display only deposits
+    }
+
+    private static void displayPayments() {
+        // Display only payments
+    }
+
+    private static void displayReports() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Reports Screen");
+        System.out.println("1) Month To Date");
+        System.out.println("2) Previous Month");
+        System.out.println("3) Year To Date");
+        System.out.println("4) Previous Year");
+        System.out.println("5) Search by Vendor");
+        System.out.println("6) Custom Search");
+        System.out.println("0) Back");
+        System.out.print("Choose an option: ");
+        String option = scanner.nextLine();
+
+        switch (option) {
+            case "1", "2", "3", "4" -> generateReport();
+            case "5" -> searchByVendor();
+            case "6" -> customSearch();
+            case "0" -> {
+            }
+            default -> System.out.println("Invalid option. Please try again.");
+        }
+    }
+
+    private static void generateReport() {
+        // Generate reports based on report type
+    }
+
+    private static void searchByVendor() {
+        // Search ledger entries by vendor
+    }
+
+    private static void customSearch() {
+        // Perform custom search based on user input
+    }
+
+    private static void exit() {
+        System.out.println("Exiting the application. Goodbye!");
+    }
+} 
